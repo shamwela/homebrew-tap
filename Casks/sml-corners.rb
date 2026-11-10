@@ -7,14 +7,13 @@ cask "sml-corners" do
   desc "Run actions by pressing the corners of your trackpad"
   homepage "https://github.com/shamwela/sml-corners"
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "SML Corners.app"
 
   # The app is not notarized. Remove the download quarantine so that it opens without a Gatekeeper block.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/SML Corners.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/SML Corners.app"]
   end
 
   uninstall quit: "local.sml-corners"
