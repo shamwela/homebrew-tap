@@ -1,6 +1,6 @@
 cask "sml-corners" do
-  version "0.0.0"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  version "1.0.0"
+  sha256 "92b6849a0ee690c83d964775305371ab9f611638249b76306c3078cf179606a3"
 
   url "https://github.com/shamwela/sml-corners/releases/download/v#{version}/SML-Corners-#{version}.zip"
   name "SML Corners"
